@@ -19,6 +19,7 @@
 		FF1E368C1DCEB67F005276ED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E368B1DCEB67F005276ED /* Colors.swift */; };
 		FF1E368E1DCEB7BF005276ED /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E368D1DCEB7BF005276ED /* Exercise.swift */; };
 		FF2740D31DCF3E3C0004F77C /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2740D21DCF3E3C0004F77C /* Errors.swift */; };
+		FF30C4D01DCFE42F00343692 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF30C4CF1DCFE42F00343692 /* StringExtensions.swift */; };
 		FF46A0291DCF325B00D476AC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF46A0281DCF325B00D476AC /* APIClient.swift */; };
 		FF46A02C1DCF33D400D476AC /* MidSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF46A02B1DCF33D400D476AC /* MidSizeLabel.swift */; };
 		FF46A0301DCF341100D476AC /* Branding-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF46A02D1DCF341100D476AC /* Branding-Black.otf */; };
@@ -72,6 +73,7 @@
 		FF1E368B1DCEB67F005276ED /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = "Constants:Colors/Colors.swift"; sourceTree = "<group>"; };
 		FF1E368D1DCEB7BF005276ED /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Data/Exercise.swift; sourceTree = "<group>"; };
 		FF2740D21DCF3E3C0004F77C /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Errors/Errors.swift; sourceTree = "<group>"; };
+		FF30C4CF1DCFE42F00343692 /* StringExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StringExtensions.swift; path = Library/StringExtensions.swift; sourceTree = "<group>"; };
 		FF46A0281DCF325B00D476AC /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Services/APIClient.swift; sourceTree = "<group>"; };
 		FF46A02B1DCF33D400D476AC /* MidSizeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MidSizeLabel.swift; path = CustomLabels/MidSizeLabel.swift; sourceTree = "<group>"; };
 		FF46A02D1DCF341100D476AC /* Branding-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Branding-Black.otf"; path = "CustomFonts/Branding-Black.otf"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				FF1E36581DCEB50F005276ED /* AppDelegate.swift */,
 				FF1E365A1DCEB50F005276ED /* ViewController.swift */,
+				FF30C4CE1DCFE41700343692 /* Library */,
 				FFEBDC741DCEC03400B638B3 /* Card */,
 				FF1E368A1DCEB58B005276ED /* Services */,
 				FF1E36881DCEB574005276ED /* Errors */,
@@ -234,6 +237,14 @@
 				FF46A03B1DCF39CB00D476AC /* FitnessClient.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		FF30C4CE1DCFE41700343692 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FF30C4CF1DCFE42F00343692 /* StringExtensions.swift */,
+			);
+			name = Library;
 			sourceTree = "<group>";
 		};
 		FF46A02A1DCF338E00D476AC /* CustomFonts */ = {
@@ -549,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF30C4D01DCFE42F00343692 /* StringExtensions.swift in Sources */,
 				FF1E365B1DCEB50F005276ED /* ViewController.swift in Sources */,
 				FF1E368E1DCEB7BF005276ED /* Exercise.swift in Sources */,
 				FFEBDC761DCEC05900B638B3 /* ExerciseCard.swift in Sources */,

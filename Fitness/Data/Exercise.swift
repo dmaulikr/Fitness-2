@@ -4,6 +4,12 @@ struct Exercise: JSONDecodable {
   let id: Int
   let name: String
   let imageURL: String
+  
+  init(id: Int, name: String, imageURL: String) {
+    self.id = id
+    self.name = name
+    self.imageURL = imageURL
+  }
  
   init?(JSON: [String: AnyObject]) {
     guard let id = JSON["id"] as? Int else { return nil }

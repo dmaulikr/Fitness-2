@@ -62,14 +62,15 @@ class ViewController: UIViewController {
   var exercises: [Exercise] = [] {
     didSet {
       collectionView.reloadData()
-      
+    }
+  }
+  
+  var didFinishedFetching: Bool = false {
+    didSet {
       // Add the exercises into a table
       for exercise in exercises {
         self.addExerciseToTableSQL(exercise: exercise)
       }
-      
-      // Close the data base
-      closeDatabaseSQL()
     }
   }
   
@@ -81,6 +82,7 @@ class ViewController: UIViewController {
     //Setup the view
     setupView()
     setupConstraints()
+    print(database.databasePath())
 
     do {
       // Open the data base
@@ -89,9 +91,19 @@ class ViewController: UIViewController {
       // Create a new table
       try createTableSQL()
       
-      // Fetch the Exercises from the network
-      fetchExercises()
+      // If there are exercises inside the stored table, don't read them from the network
+      try readExerciseFromTableSQL()
       
+      // Fetch the Exercises from the network, if the exercises array is empty
+      if exercises.count == 0 {
+        fetchExercises()
+      } else {
+        collectionView.reloadData()
+        
+        // Close the data base
+        closeDatabaseSQL()
+      }
+    
     } catch (let error) {
       showAlert(title: error.localizedDescription)
     }
@@ -138,6 +150,7 @@ class ViewController: UIViewController {
       switch result {
       case .Success(let exercises):
         self.exercises = exercises
+        self.didFinishedFetching = true
       case .Failure(let error):
         // TODO: Handle no exercises error
         print(error)
@@ -155,7 +168,7 @@ class ViewController: UIViewController {
   // MARK: SQL Methods
   
   static func createDatabase() -> FMDatabase {
-    let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("list.db")
+    let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("exercises.sqlite")
     return FMDatabase(path: fileURL.path)
   }
   
@@ -182,8 +195,8 @@ class ViewController: UIViewController {
       let id = exercise.id
       let name = exercise.name
       let image_url = exercise.imageURL
-      
-      try database.executeUpdate("insert into list (id,name,image_url) values (?,?,?)", values: [id,name,image_url])
+      let insertQuery = "insert into list (id,name,image_url) values (?,?,?)"
+      try database.executeUpdate(insertQuery, values: [id,name,image_url])
     } catch {
       showAlert(title: DataBaseError.exerciseNotAdded.rawValue)
     }
@@ -191,9 +204,19 @@ class ViewController: UIViewController {
   
   func readExerciseFromTableSQL() throws {
     do {
-      let rowData = try database.executeQuery("select * from list", values: nil)
-      print("My info: \(rowData)")
-      // TODO: - Save all the data into an array
+      let queryExercises = "select * from list"
+      self.exercises = [Exercise]()
+      if let resultSet = database.executeQuery(queryExercises, withArgumentsIn: nil) {
+        while resultSet.next() {
+          if let id = resultSet.string(forColumn: "id"),
+            let name = resultSet.string(forColumn: "name"),
+            let url = resultSet.string(forColumn: "image_url") {
+            guard let idInt = try id.convertStringToInt() else { throw ConversionError.fromStringToInt }
+            print(name)
+            exercises.append(Exercise(id: idInt, name: name, imageURL: url))
+          }
+        }
+      }
     } catch {
       throw DataBaseError.execisesCannotBeRead
     }
