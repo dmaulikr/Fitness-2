@@ -4,8 +4,7 @@ class ExerciseCard: UICollectionViewCell {
   
   lazy var cardImage: UIImageView = {
     let imageView = UIImageView()
-    imageView.contentMode = .scaleAspectFill
-    imageView.image = UIImage(named: "Exercise")
+    imageView.contentMode = .scaleAspectFit
     imageView.translatesAutoresizingMaskIntoConstraints = false
     imageView.layer.masksToBounds = true
     
@@ -45,13 +44,13 @@ class ExerciseCard: UICollectionViewCell {
   func setupCellConstraints(){
     NSLayoutConstraint.activate([
       exerciseNameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-      exerciseNameLabel.topAnchor.constraint(equalTo: bottomAnchor, constant: -50),
+      exerciseNameLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Constants.bottomMargin),
       exerciseNameLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
       
-      cardImage.leftAnchor.constraint(equalTo: leftAnchor),
-      cardImage.topAnchor.constraint(equalTo: topAnchor),
-      cardImage.rightAnchor.constraint(equalTo: rightAnchor),
-      cardImage.bottomAnchor.constraint(equalTo: exerciseNameLabel.bottomAnchor, constant: -30)
+      cardImage.leftAnchor.constraint(equalTo: leftAnchor, constant: Constants.leftMargin),
+      cardImage.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+      cardImage.rightAnchor.constraint(equalTo: rightAnchor, constant: Constants.rightMargin ),
+      cardImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.7)
     ])
   }
 }

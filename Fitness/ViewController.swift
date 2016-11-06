@@ -117,6 +117,13 @@ class ViewController: UIViewController {
     }
   }
   
+  func getDataFromUrl(url: URL, completion: @escaping (_ data: Data?, _  response: URLResponse?, _ error: Error?) -> Void) {
+    URLSession.shared.dataTask(with: url) {
+      (data, response, error) in
+      completion(data, response, error)
+      }.resume()
+  }
+  
 }
 
 // MARK: - CollectionView Extensions
@@ -129,7 +136,27 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifier, for: indexPath) as? ExerciseCard else { return UICollectionViewCell() }
     
+    // For each item update the exercise Label name
     cell.exerciseNameLabel.text = exercises[indexPath.row].name
+    
+    // If the length of the label is higher than 25, then decrease the label font size
+    if let length = cell.exerciseNameLabel.text?.characters.count {
+      if length > 25 {
+        cell.exerciseNameLabel.font = UIFont(name: "Branding-SemiLight", size: 14)
+      }
+    }
+    
+    // For each item, download the image from the link
+    let url = URL(string: exercises[indexPath.row].imageURL)
+    
+    if let url = url {
+      getDataFromUrl(url: url) { (data, response, error)  in
+        guard let data = data, error == nil else { return }
+        DispatchQueue.main.async() { () -> Void in
+          cell.cardImage.image = UIImage(data: data)
+        }
+      }
+    }
     
     return cell
   }
@@ -142,4 +169,3 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
   }
   
 }
-
