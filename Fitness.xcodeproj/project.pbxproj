@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		FF1E36591DCEB50F005276ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E36581DCEB50F005276ED /* AppDelegate.swift */; };
 		FF1E365B1DCEB50F005276ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E365A1DCEB50F005276ED /* ViewController.swift */; };
-		FF1E365E1DCEB50F005276ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1E365C1DCEB50F005276ED /* Main.storyboard */; };
 		FF1E36601DCEB50F005276ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FF1E365F1DCEB50F005276ED /* Assets.xcassets */; };
 		FF1E36631DCEB50F005276ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF1E36611DCEB50F005276ED /* LaunchScreen.storyboard */; };
 		FF1E366E1DCEB50F005276ED /* FitnessTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E366D1DCEB50F005276ED /* FitnessTests.swift */; };
 		FF1E36791DCEB50F005276ED /* FitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E36781DCEB50F005276ED /* FitnessUITests.swift */; };
+		FF1E368C1DCEB67F005276ED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E368B1DCEB67F005276ED /* Colors.swift */; };
+		FF1E368E1DCEB7BF005276ED /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E368D1DCEB7BF005276ED /* Exercise.swift */; };
+		FFE2F1CD1DCEBCF700F88197 /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2F1CC1DCEBCF700F88197 /* CustomCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,7 +39,6 @@
 		FF1E36551DCEB50F005276ED /* Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fitness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1E36581DCEB50F005276ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FF1E365A1DCEB50F005276ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FF1E365D1DCEB50F005276ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FF1E365F1DCEB50F005276ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FF1E36621DCEB50F005276ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FF1E36641DCEB50F005276ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +48,9 @@
 		FF1E36741DCEB50F005276ED /* FitnessUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FitnessUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF1E36781DCEB50F005276ED /* FitnessUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitnessUITests.swift; sourceTree = "<group>"; };
 		FF1E367A1DCEB50F005276ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FF1E368B1DCEB67F005276ED /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = "Constants:Colors/Colors.swift"; sourceTree = "<group>"; };
+		FF1E368D1DCEB7BF005276ED /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Data/Exercise.swift; sourceTree = "<group>"; };
+		FFE2F1CC1DCEBCF700F88197 /* CustomCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCollectionView.swift; path = CustomViews/CustomCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,10 @@
 			children = (
 				FF1E36581DCEB50F005276ED /* AppDelegate.swift */,
 				FF1E365A1DCEB50F005276ED /* ViewController.swift */,
-				FF1E365C1DCEB50F005276ED /* Main.storyboard */,
+				FF1E368A1DCEB58B005276ED /* Services */,
+				FF1E36891DCEB57D005276ED /* CustomViews */,
+				FF1E36881DCEB574005276ED /* Errors */,
+				FF1E36871DCEB563005276ED /* Constants/Colors */,
 				FF1E36861DCEB51A005276ED /* Data */,
 				FF1E365F1DCEB50F005276ED /* Assets.xcassets */,
 				FF1E36611DCEB50F005276ED /* LaunchScreen.storyboard */,
@@ -129,8 +136,39 @@
 		FF1E36861DCEB51A005276ED /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				FF1E368D1DCEB7BF005276ED /* Exercise.swift */,
 			);
 			name = Data;
+			sourceTree = "<group>";
+		};
+		FF1E36871DCEB563005276ED /* Constants/Colors */ = {
+			isa = PBXGroup;
+			children = (
+				FF1E368B1DCEB67F005276ED /* Colors.swift */,
+			);
+			name = Constants/Colors;
+			sourceTree = "<group>";
+		};
+		FF1E36881DCEB574005276ED /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Errors;
+			sourceTree = "<group>";
+		};
+		FF1E36891DCEB57D005276ED /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				FFE2F1CC1DCEBCF700F88197 /* CustomCollectionView.swift */,
+			);
+			name = CustomViews;
+			sourceTree = "<group>";
+		};
+		FF1E368A1DCEB58B005276ED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,7 +283,6 @@
 			files = (
 				FF1E36631DCEB50F005276ED /* LaunchScreen.storyboard in Resources */,
 				FF1E36601DCEB50F005276ED /* Assets.xcassets in Resources */,
-				FF1E365E1DCEB50F005276ED /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,7 +307,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFE2F1CD1DCEBCF700F88197 /* CustomCollectionView.swift in Sources */,
 				FF1E365B1DCEB50F005276ED /* ViewController.swift in Sources */,
+				FF1E368E1DCEB7BF005276ED /* Exercise.swift in Sources */,
+				FF1E368C1DCEB67F005276ED /* Colors.swift in Sources */,
 				FF1E36591DCEB50F005276ED /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,14 +347,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		FF1E365C1DCEB50F005276ED /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FF1E365D1DCEB50F005276ED /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FF1E36611DCEB50F005276ED /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -423,6 +455,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2DX87RQR8M;
 				INFOPLIST_FILE = Fitness/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = josepbordesjove.Fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,6 +469,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2DX87RQR8M;
 				INFOPLIST_FILE = Fitness/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = josepbordesjove.Fitness;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -520,6 +554,7 @@
 				FF1E367F1DCEB50F005276ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF1E36801DCEB50F005276ED /* Build configuration list for PBXNativeTarget "FitnessTests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +563,7 @@
 				FF1E36821DCEB50F005276ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FF1E36831DCEB50F005276ED /* Build configuration list for PBXNativeTarget "FitnessUITests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +572,7 @@
 				FF1E36851DCEB50F005276ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

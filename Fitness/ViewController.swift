@@ -1,25 +1,21 @@
-//
-//  ViewController.swift
-//  Fitness
-//
-//  Created by Josep Bordes Jové on 6/11/16.
-//  Copyright © 2016 Josep Bordes Jové. All rights reserved.
-//
-
 import UIKit
 
 class ViewController: UIViewController {
-
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    setupView()
+    setupConstraints()
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  
+  func setupView() {
+    view.backgroundColor = Colors.darkBlue
   }
-
-
+  
+  func setupConstraints() {
+    
+  }
+  
+  
 }
 
