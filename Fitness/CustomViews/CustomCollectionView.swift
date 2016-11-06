@@ -9,10 +9,9 @@ class CustomCollectionView: UICollectionView {
     autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleWidth]
     backgroundColor = .clear
     bounces = true
-    isPagingEnabled = true
-    showsHorizontalScrollIndicator = true
-    alwaysBounceVertical = false
-    alwaysBounceHorizontal = true
+    showsVerticalScrollIndicator = true
+    alwaysBounceVertical = true
+    alwaysBounceHorizontal = false
     translatesAutoresizingMaskIntoConstraints = false
   }
   

@@ -8,7 +8,7 @@ class ViewController: UIViewController {
   
   lazy var flowLayout: UICollectionViewFlowLayout = {
     var flow = UICollectionViewFlowLayout()
-    flow.scrollDirection = .horizontal
+    flow.scrollDirection = .vertical
     flow.sectionInset = UIEdgeInsetsMake(2.0, 2.0, 2.0, 2.0)
     return flow
   }()
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
       
       collectionView.topAnchor.constraint(equalTo: userButton.bottomAnchor, constant: 30),
       collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.rightMargin),
-      collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -70),
+      collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
       collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.leftMargin)
     ])
   }
@@ -82,7 +82,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, 
   }
   
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    return CGSize(width: 270, height: 370)
+    let cardHeight = Constants.cardHeight
+    let cardWidth = Constants.cardWidth
+    
+    return CGSize(width: cardWidth, height: cardHeight)
   }
   
 }
