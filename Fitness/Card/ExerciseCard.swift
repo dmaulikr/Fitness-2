@@ -15,6 +15,7 @@ class ExerciseCard: UICollectionViewCell {
   lazy var exerciseNameLabel: UILabel = {
     let label = UILabel()
     label.text = "PushUps"
+    label.font = UIFont(name: "Branding-SemiLight", size: 14)
     label.translatesAutoresizingMaskIntoConstraints = false
     
     return label

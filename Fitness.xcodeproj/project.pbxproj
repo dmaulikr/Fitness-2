@@ -20,6 +20,7 @@
 		FF46A0301DCF341100D476AC /* Branding-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF46A02D1DCF341100D476AC /* Branding-Black.otf */; };
 		FF46A0311DCF341100D476AC /* Branding-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF46A02E1DCF341100D476AC /* Branding-Medium.otf */; };
 		FF46A0321DCF341100D476AC /* Branding-SemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF46A02F1DCF341100D476AC /* Branding-SemiLight.otf */; };
+		FF46A03C1DCF39CB00D476AC /* FitnessClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF46A03B1DCF39CB00D476AC /* FitnessClient.swift */; };
 		FF51136A1DCEC58F00AB100D /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5113691DCEC58F00AB100D /* CustomCollectionView.swift */; };
 		FF51136C1DCEC77600AB100D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF51136B1DCEC77600AB100D /* Constants.swift */; };
 		FFEBDC761DCEC05900B638B3 /* ExerciseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBDC751DCEC05900B638B3 /* ExerciseCard.swift */; };
@@ -62,6 +63,7 @@
 		FF46A02D1DCF341100D476AC /* Branding-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Branding-Black.otf"; path = "CustomFonts/Branding-Black.otf"; sourceTree = "<group>"; };
 		FF46A02E1DCF341100D476AC /* Branding-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Branding-Medium.otf"; path = "CustomFonts/Branding-Medium.otf"; sourceTree = "<group>"; };
 		FF46A02F1DCF341100D476AC /* Branding-SemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Branding-SemiLight.otf"; path = "CustomFonts/Branding-SemiLight.otf"; sourceTree = "<group>"; };
+		FF46A03B1DCF39CB00D476AC /* FitnessClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FitnessClient.swift; path = Services/FitnessClient.swift; sourceTree = "<group>"; };
 		FF5113691DCEC58F00AB100D /* CustomCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCollectionView.swift; path = CustomViews/CustomCollectionView.swift; sourceTree = "<group>"; };
 		FF51136B1DCEC77600AB100D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "Constants:Colors/Constants.swift"; sourceTree = "<group>"; };
 		FFEBDC751DCEC05900B638B3 /* ExerciseCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseCard.swift; path = Card/ExerciseCard.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				FF46A0281DCF325B00D476AC /* APIClient.swift */,
+				FF46A03B1DCF39CB00D476AC /* FitnessClient.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				FF46A02C1DCF33D400D476AC /* MidSizeLabel.swift in Sources */,
 				FF1E368C1DCEB67F005276ED /* Colors.swift in Sources */,
 				FF1E36591DCEB50F005276ED /* AppDelegate.swift in Sources */,
+				FF46A03C1DCF39CB00D476AC /* FitnessClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

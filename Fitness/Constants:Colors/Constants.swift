@@ -10,4 +10,5 @@ struct Constants {
   static let userIconWidth = CGFloat(40)
   static let leftMargin = CGFloat(10)
   static let rightMargin = CGFloat(-10)
+  static let topMargin = CGFloat(30)
 }

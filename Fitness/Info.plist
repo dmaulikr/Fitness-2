@@ -36,5 +36,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Branding-Black.otf</string>
+		<string>Branding-Medium.otf</string>
+		<string>Branding-SemiLight.otf</string>
+	</array>
 </dict>
 </plist>

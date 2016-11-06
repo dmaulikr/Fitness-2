@@ -33,6 +33,26 @@ class ViewController: UIViewController {
     return button
   }()
   
+  lazy var workoutDayLabel: UILabel = {
+    let label = UILabel()
+    label.text = "Day 1"
+    label.textColor = .white
+    label.font = UIFont(name: "Branding-Black", size: 30)
+    label.translatesAutoresizingMaskIntoConstraints = false
+    
+    return label
+  }()
+  
+  lazy var completedLabel: UILabel =  {
+    let label = UILabel()
+    label.text = "Completed: 30%"
+    label.textColor = Colors.yellowGreen
+    label.font = UIFont(name: "Branding-Black", size: 18)
+    label.translatesAutoresizingMaskIntoConstraints = false
+    
+    return label
+  }()
+  
   
   // MARK: - ViewDidLoad
   
@@ -49,20 +69,26 @@ class ViewController: UIViewController {
     view.backgroundColor = Colors.darkBlue
     
     // Add views to the view controller
-    [userButton,collectionView].forEach{view.addSubview($0)}
+    [userButton,collectionView, workoutDayLabel,completedLabel].forEach{view.addSubview($0)}
   }
   
   func setupConstraints() {
     NSLayoutConstraint.activate([
-      userButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -30),
-      userButton.topAnchor.constraint(equalTo: view.topAnchor, constant: 50),
+      userButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.rightMargin*2),
+      userButton.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.topMargin + 10),
       userButton.heightAnchor.constraint(equalToConstant: Constants.userIconHeight),
       userButton.widthAnchor.constraint(equalToConstant: Constants.userIconWidth),
       
-      collectionView.topAnchor.constraint(equalTo: userButton.bottomAnchor, constant: 30),
+      collectionView.topAnchor.constraint(equalTo: userButton.bottomAnchor, constant: Constants.topMargin),
       collectionView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: Constants.rightMargin),
       collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
-      collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.leftMargin)
+      collectionView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.leftMargin),
+      
+      workoutDayLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.leftMargin*2),
+      workoutDayLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: Constants.topMargin),
+      
+      completedLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.leftMargin*2),
+      completedLabel.topAnchor.constraint(equalTo: workoutDayLabel.bottomAnchor)
     ])
   }
   
