@@ -47,11 +47,21 @@ class ViewController: UIViewController {
     let label = UILabel()
     label.text = "Completed: 30%"
     label.textColor = Colors.yellowGreen
-    label.font = UIFont(name: "Branding-Black", size: 18)
+    label.font = UIFont(name: "Branding-Medium", size: 18)
     label.translatesAutoresizingMaskIntoConstraints = false
     
     return label
   }()
+  
+  // MARK: - Vars
+  
+  let fitnessClient = FitnessClient()
+  
+  var exercises: [Exercise] = [] {
+    didSet {
+      collectionView.reloadData()
+    }
+  }
   
   
   // MARK: - ViewDidLoad
@@ -60,6 +70,7 @@ class ViewController: UIViewController {
     super.viewDidLoad()
     setupView()
     setupConstraints()
+    fetchExercises()
   }
   
   // MARK: - Setup the view
@@ -92,17 +103,33 @@ class ViewController: UIViewController {
     ])
   }
   
+  // MARK: - Fetch Data from Network
+  
+  func fetchExercises() {
+    fitnessClient.fetchExercises() { result in
+      switch result {
+      case .Success(let exercises):
+      self.exercises = exercises
+      case .Failure(let error):
+      // TODO: Handle no starships error
+      print(error)
+      }
+    }
+  }
+  
 }
 
 // MARK: - CollectionView Extensions
 
 extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return 10
+    return exercises.count
   }
   
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reusableIdentifier, for: indexPath) as? ExerciseCard else { return UICollectionViewCell() }
+    
+    cell.exerciseNameLabel.text = exercises[indexPath.row].name
     
     return cell
   }

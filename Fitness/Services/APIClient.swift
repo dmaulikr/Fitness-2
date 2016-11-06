@@ -1,6 +1,6 @@
 import Foundation
 
-public let JBJNetworkingErrorDomain = "com.josepbordes.apiawakens"
+public let JBJNetworkingErrorDomain = "com.josepbordes.fitness"
 public let MissingHTTPResponseError: Int = 10
 public let UnexpectedResponseError: Int = 20
 

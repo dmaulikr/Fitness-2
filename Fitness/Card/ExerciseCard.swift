@@ -14,8 +14,10 @@ class ExerciseCard: UICollectionViewCell {
   
   lazy var exerciseNameLabel: UILabel = {
     let label = UILabel()
-    label.text = "PushUps"
-    label.font = UIFont(name: "Branding-SemiLight", size: 14)
+    label.font = UIFont(name: "Branding-SemiLight", size: 16)
+    label.textAlignment = .left
+    label.lineBreakMode = .byWordWrapping
+    label.numberOfLines = 0
     label.translatesAutoresizingMaskIntoConstraints = false
     
     return label
@@ -44,7 +46,7 @@ class ExerciseCard: UICollectionViewCell {
     NSLayoutConstraint.activate([
       exerciseNameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
       exerciseNameLabel.topAnchor.constraint(equalTo: bottomAnchor, constant: -50),
-      exerciseNameLabel.rightAnchor.constraint(equalTo: rightAnchor),
+      exerciseNameLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -10),
       
       cardImage.leftAnchor.constraint(equalTo: leftAnchor),
       cardImage.topAnchor.constraint(equalTo: topAnchor),

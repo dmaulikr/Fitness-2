@@ -15,6 +15,7 @@
 		FF1E36791DCEB50F005276ED /* FitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E36781DCEB50F005276ED /* FitnessUITests.swift */; };
 		FF1E368C1DCEB67F005276ED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E368B1DCEB67F005276ED /* Colors.swift */; };
 		FF1E368E1DCEB7BF005276ED /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E368D1DCEB7BF005276ED /* Exercise.swift */; };
+		FF2740D31DCF3E3C0004F77C /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF2740D21DCF3E3C0004F77C /* Errors.swift */; };
 		FF46A0291DCF325B00D476AC /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF46A0281DCF325B00D476AC /* APIClient.swift */; };
 		FF46A02C1DCF33D400D476AC /* MidSizeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF46A02B1DCF33D400D476AC /* MidSizeLabel.swift */; };
 		FF46A0301DCF341100D476AC /* Branding-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FF46A02D1DCF341100D476AC /* Branding-Black.otf */; };
@@ -58,6 +59,7 @@
 		FF1E367A1DCEB50F005276ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1E368B1DCEB67F005276ED /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = "Constants:Colors/Colors.swift"; sourceTree = "<group>"; };
 		FF1E368D1DCEB7BF005276ED /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Data/Exercise.swift; sourceTree = "<group>"; };
+		FF2740D21DCF3E3C0004F77C /* Errors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Errors.swift; path = Errors/Errors.swift; sourceTree = "<group>"; };
 		FF46A0281DCF325B00D476AC /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = APIClient.swift; path = Services/APIClient.swift; sourceTree = "<group>"; };
 		FF46A02B1DCF33D400D476AC /* MidSizeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MidSizeLabel.swift; path = CustomLabels/MidSizeLabel.swift; sourceTree = "<group>"; };
 		FF46A02D1DCF341100D476AC /* Branding-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Branding-Black.otf"; path = "CustomFonts/Branding-Black.otf"; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		FF1E36881DCEB574005276ED /* Errors */ = {
 			isa = PBXGroup;
 			children = (
+				FF2740D21DCF3E3C0004F77C /* Errors.swift */,
 			);
 			name = Errors;
 			sourceTree = "<group>";
@@ -365,6 +368,7 @@
 				FF51136A1DCEC58F00AB100D /* CustomCollectionView.swift in Sources */,
 				FF51136C1DCEC77600AB100D /* Constants.swift in Sources */,
 				FF46A02C1DCF33D400D476AC /* MidSizeLabel.swift in Sources */,
+				FF2740D31DCF3E3C0004F77C /* Errors.swift in Sources */,
 				FF1E368C1DCEB67F005276ED /* Colors.swift in Sources */,
 				FF1E36591DCEB50F005276ED /* AppDelegate.swift in Sources */,
 				FF46A03C1DCF39CB00D476AC /* FitnessClient.swift in Sources */,
