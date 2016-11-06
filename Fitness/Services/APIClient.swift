@@ -73,7 +73,7 @@ extension APIClient {
           if let error = error {
             completion(.Failure(error))
           } else {
-            // TODO: Implement Error Handling
+            completion(.Failure(NetworkErrors.noError))
           }
           return
         }

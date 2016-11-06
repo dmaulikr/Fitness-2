@@ -39,5 +39,5 @@ final class FitnessClient: APIClient {
     }, completion: completion)
   }
 
-
+  
 }

@@ -12,3 +12,7 @@ enum DataBaseError: String, Error {
 enum ConversionError: String, Error {
   case fromStringToInt = "Cannot convert tis string into an Int"
 }
+
+enum NetworkErrors: String, Error {
+  case noError = "Any Error available, things went so wrong..."
+}
