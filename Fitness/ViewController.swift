@@ -1,4 +1,5 @@
 import UIKit
+import FMDB
 
 private let reusableIdentifier = "ExerciseItemCell"
 
@@ -56,10 +57,19 @@ class ViewController: UIViewController {
   // MARK: - Vars
   
   let fitnessClient = FitnessClient()
+  var database = ViewController.createDatabase()
   
   var exercises: [Exercise] = [] {
     didSet {
       collectionView.reloadData()
+      
+      // Add the exercises into a table
+      for exercise in exercises {
+        self.addExerciseToTableSQL(exercise: exercise)
+      }
+      
+      // Close the data base
+      closeDatabaseSQL()
     }
   }
   
@@ -68,9 +78,27 @@ class ViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    //Setup the view
     setupView()
     setupConstraints()
-    fetchExercises()
+
+    do {
+      // Open the data base
+      try openDatabaseSQL()
+      
+      // Create a new table
+      try createTableSQL()
+      
+      // Fetch the Exercises from the network
+      fetchExercises()
+      
+    } catch (let error) {
+      showAlert(title: error.localizedDescription)
+    }
+    
+  }
+  
+  override func viewDidLayoutSubviews() {
   }
   
   // MARK: - Setup the view
@@ -100,7 +128,7 @@ class ViewController: UIViewController {
       
       completedLabel.leftAnchor.constraint(equalTo: view.leftAnchor, constant: Constants.leftMargin*2),
       completedLabel.topAnchor.constraint(equalTo: workoutDayLabel.bottomAnchor)
-    ])
+      ])
   }
   
   // MARK: - Fetch Data from Network
@@ -109,10 +137,10 @@ class ViewController: UIViewController {
     fitnessClient.fetchExercises() { result in
       switch result {
       case .Success(let exercises):
-      self.exercises = exercises
+        self.exercises = exercises
       case .Failure(let error):
-      // TODO: Handle no starships error
-      print(error)
+        // TODO: Handle no exercises error
+        print(error)
       }
     }
   }
@@ -122,6 +150,69 @@ class ViewController: UIViewController {
       (data, response, error) in
       completion(data, response, error)
       }.resume()
+  }
+  
+  // MARK: SQL Methods
+  
+  static func createDatabase() -> FMDatabase {
+    let fileURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!.appendingPathComponent("list.db")
+    return FMDatabase(path: fileURL.path)
+  }
+  
+  func openDatabaseSQL() throws {
+    if !database.open() {
+      throw DataBaseError.notOpened
+    }
+  }
+  
+  func closeDatabaseSQL() {
+    database.close()
+  }
+  
+  func createTableSQL() throws {
+    do {
+      try database.executeUpdate("create table if not exists list (id text, name text, image_url text)", values: nil)
+    } catch {
+      throw DataBaseError.tableNotCreated
+    }
+  }
+  
+  func addExerciseToTableSQL(exercise: Exercise)  {
+    do {
+      let id = exercise.id
+      let name = exercise.name
+      let image_url = exercise.imageURL
+      
+      try database.executeUpdate("insert into list (id,name,image_url) values (?,?,?)", values: [id,name,image_url])
+    } catch {
+      showAlert(title: DataBaseError.exerciseNotAdded.rawValue)
+    }
+  }
+  
+  func readExerciseFromTableSQL() throws {
+    do {
+      let rowData = try database.executeQuery("select * from list", values: nil)
+      print("My info: \(rowData)")
+      // TODO: - Save all the data into an array
+    } catch {
+      throw DataBaseError.execisesCannotBeRead
+    }
+    
+  }
+  
+  // MARK: - Alert ViewController
+  
+  // Description: Shows an alert windows
+  func showAlert(title: String, message: String? = nil, style: UIAlertControllerStyle = .alert) {
+    let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    let okAction = UIAlertAction(title: "OK", style: .default, handler: dismissAlert)
+    
+    alertController.addAction(okAction)
+    present(alertController, animated: true, completion: nil)
+  }
+  
+  // Description: Action executed when dismissed an alert window
+  func dismissAlert(sender: UIAlertAction) {
   }
   
 }
