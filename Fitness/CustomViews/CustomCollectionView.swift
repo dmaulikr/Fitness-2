@@ -1,21 +1,23 @@
-//
-//  CustomCollectionView.swift
-//  Fitness
-//
-//  Created by Josep Bordes Jové on 6/11/16.
-//  Copyright © 2016 Josep Bordes Jové. All rights reserved.
-//
-
 import UIKit
 
 class CustomCollectionView: UICollectionView {
+  
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+  override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+    super.init(frame: frame, collectionViewLayout: layout)
+    
+    autoresizingMask = [UIViewAutoresizing.flexibleHeight, UIViewAutoresizing.flexibleWidth]
+    backgroundColor = .clear
+    bounces = true
+    isPagingEnabled = true
+    showsHorizontalScrollIndicator = true
+    alwaysBounceVertical = false
+    alwaysBounceHorizontal = true
+    translatesAutoresizingMaskIntoConstraints = false
+  }
+  
+  required init?(coder aDecoder: NSCoder) {
+    fatalError("init(coder:) has not been implemented")
+  }
 
 }

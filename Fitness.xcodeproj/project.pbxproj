@@ -15,7 +15,12 @@
 		FF1E36791DCEB50F005276ED /* FitnessUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E36781DCEB50F005276ED /* FitnessUITests.swift */; };
 		FF1E368C1DCEB67F005276ED /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E368B1DCEB67F005276ED /* Colors.swift */; };
 		FF1E368E1DCEB7BF005276ED /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF1E368D1DCEB7BF005276ED /* Exercise.swift */; };
-		FFE2F1CD1DCEBCF700F88197 /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFE2F1CC1DCEBCF700F88197 /* CustomCollectionView.swift */; };
+		FF51136A1DCEC58F00AB100D /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF5113691DCEC58F00AB100D /* CustomCollectionView.swift */; };
+		FF51136C1DCEC77600AB100D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF51136B1DCEC77600AB100D /* Constants.swift */; };
+		FFEBDC711DCEBDB300B638B3 /* Branding-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFEBDC6E1DCEBDB300B638B3 /* Branding-Black.otf */; };
+		FFEBDC721DCEBDB300B638B3 /* Branding-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFEBDC6F1DCEBDB300B638B3 /* Branding-Medium.otf */; };
+		FFEBDC731DCEBDB300B638B3 /* Branding-SemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = FFEBDC701DCEBDB300B638B3 /* Branding-SemiLight.otf */; };
+		FFEBDC761DCEC05900B638B3 /* ExerciseCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBDC751DCEC05900B638B3 /* ExerciseCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +55,12 @@
 		FF1E367A1DCEB50F005276ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FF1E368B1DCEB67F005276ED /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Colors.swift; path = "Constants:Colors/Colors.swift"; sourceTree = "<group>"; };
 		FF1E368D1DCEB7BF005276ED /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Data/Exercise.swift; sourceTree = "<group>"; };
-		FFE2F1CC1DCEBCF700F88197 /* CustomCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCollectionView.swift; path = CustomViews/CustomCollectionView.swift; sourceTree = "<group>"; };
+		FF5113691DCEC58F00AB100D /* CustomCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomCollectionView.swift; path = CustomViews/CustomCollectionView.swift; sourceTree = "<group>"; };
+		FF51136B1DCEC77600AB100D /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = "Constants:Colors/Constants.swift"; sourceTree = "<group>"; };
+		FFEBDC6E1DCEBDB300B638B3 /* Branding-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Branding-Black.otf"; sourceTree = "<group>"; };
+		FFEBDC6F1DCEBDB300B638B3 /* Branding-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Branding-Medium.otf"; sourceTree = "<group>"; };
+		FFEBDC701DCEBDB300B638B3 /* Branding-SemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Branding-SemiLight.otf"; sourceTree = "<group>"; };
+		FFEBDC751DCEC05900B638B3 /* ExerciseCard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseCard.swift; path = Card/ExerciseCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,11 +113,13 @@
 			children = (
 				FF1E36581DCEB50F005276ED /* AppDelegate.swift */,
 				FF1E365A1DCEB50F005276ED /* ViewController.swift */,
+				FFEBDC741DCEC03400B638B3 /* Card */,
 				FF1E368A1DCEB58B005276ED /* Services */,
 				FF1E36891DCEB57D005276ED /* CustomViews */,
 				FF1E36881DCEB574005276ED /* Errors */,
 				FF1E36871DCEB563005276ED /* Constants/Colors */,
 				FF1E36861DCEB51A005276ED /* Data */,
+				FFE2F1CE1DCEBD3000F88197 /* CustomFonts */,
 				FF1E365F1DCEB50F005276ED /* Assets.xcassets */,
 				FF1E36611DCEB50F005276ED /* LaunchScreen.storyboard */,
 				FF1E36641DCEB50F005276ED /* Info.plist */,
@@ -145,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				FF1E368B1DCEB67F005276ED /* Colors.swift */,
+				FF51136B1DCEC77600AB100D /* Constants.swift */,
 			);
 			name = Constants/Colors;
 			sourceTree = "<group>";
@@ -159,7 +172,7 @@
 		FF1E36891DCEB57D005276ED /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
-				FFE2F1CC1DCEBCF700F88197 /* CustomCollectionView.swift */,
+				FF5113691DCEC58F00AB100D /* CustomCollectionView.swift */,
 			);
 			name = CustomViews;
 			sourceTree = "<group>";
@@ -169,6 +182,24 @@
 			children = (
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		FFE2F1CE1DCEBD3000F88197 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBDC6E1DCEBDB300B638B3 /* Branding-Black.otf */,
+				FFEBDC6F1DCEBDB300B638B3 /* Branding-Medium.otf */,
+				FFEBDC701DCEBDB300B638B3 /* Branding-SemiLight.otf */,
+			);
+			name = CustomFonts;
+			sourceTree = "<group>";
+		};
+		FFEBDC741DCEC03400B638B3 /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				FFEBDC751DCEC05900B638B3 /* ExerciseCard.swift */,
+			);
+			name = Card;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,8 +312,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFEBDC731DCEBDB300B638B3 /* Branding-SemiLight.otf in Resources */,
 				FF1E36631DCEB50F005276ED /* LaunchScreen.storyboard in Resources */,
+				FFEBDC721DCEBDB300B638B3 /* Branding-Medium.otf in Resources */,
 				FF1E36601DCEB50F005276ED /* Assets.xcassets in Resources */,
+				FFEBDC711DCEBDB300B638B3 /* Branding-Black.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,9 +341,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFE2F1CD1DCEBCF700F88197 /* CustomCollectionView.swift in Sources */,
 				FF1E365B1DCEB50F005276ED /* ViewController.swift in Sources */,
 				FF1E368E1DCEB7BF005276ED /* Exercise.swift in Sources */,
+				FFEBDC761DCEC05900B638B3 /* ExerciseCard.swift in Sources */,
+				FF51136A1DCEC58F00AB100D /* CustomCollectionView.swift in Sources */,
+				FF51136C1DCEC77600AB100D /* Constants.swift in Sources */,
 				FF1E368C1DCEB67F005276ED /* Colors.swift in Sources */,
 				FF1E36591DCEB50F005276ED /* AppDelegate.swift in Sources */,
 			);
